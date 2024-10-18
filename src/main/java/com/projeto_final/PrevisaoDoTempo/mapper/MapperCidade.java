@@ -1,12 +1,11 @@
 package com.projeto_final.PrevisaoDoTempo.mapper;
-
 import com.projeto_final.PrevisaoDoTempo.core.dto.CidadeRequestDdo;
 import com.projeto_final.PrevisaoDoTempo.core.dto.CidadeResponseDto;
 import com.projeto_final.PrevisaoDoTempo.core.entities.Cidade;
 
 public class MapperCidade {
 
-    public static Cidade dtoToEntity(CidadeRequestDdo dados){
+    public static Cidade dtoToEntity(CidadeRequestDdo dados) {
         Cidade novaCidade = new Cidade();
         novaCidade.setNome(dados.getNome());
         return novaCidade;

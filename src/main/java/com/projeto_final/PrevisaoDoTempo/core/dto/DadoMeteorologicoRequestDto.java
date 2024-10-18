@@ -11,20 +11,26 @@ import java.time.LocalDate;
 
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
+
 public class DadoMeteorologicoRequestDto {
 
     @Getter
     @Setter
     private String nomeDaCidade;
+
     @Getter
     @Setter
     private LocalDate data;
+
     @Getter
     @Setter
     private Integer temperaturaMinima;
+
     @Getter
     @Setter
     private Integer temperaturaMaxima;
+
     @Getter
     @Setter
     private Turno turno;

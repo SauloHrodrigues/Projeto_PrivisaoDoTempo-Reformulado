@@ -1,5 +1,4 @@
 package com.projeto_final.PrevisaoDoTempo.mapper;
-
 import com.projeto_final.PrevisaoDoTempo.core.dto.DadoMeteorologicoRequestDto;
 import com.projeto_final.PrevisaoDoTempo.core.dto.DadoMeteorologicoResponseDto;
 import com.projeto_final.PrevisaoDoTempo.core.entities.Cidade;
@@ -19,7 +18,7 @@ public class MapperDadosMetearologicos {
         return responseDto;
     }
 
-    public static DadoMeteorologico dtoToEntity (DadoMeteorologicoRequestDto dado, Cidade cidade){
+    public static DadoMeteorologico dtoToEntity(DadoMeteorologicoRequestDto dado, Cidade cidade) {
         DadoMeteorologico novoDado = new DadoMeteorologico();
         novoDado.setData(dado.getData());
         novoDado.setTemperaturaMinima(dado.getTemperaturaMinima());

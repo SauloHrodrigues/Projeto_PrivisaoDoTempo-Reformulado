@@ -2,13 +2,9 @@ package com.projeto_final.PrevisaoDoTempo.webservice;
 
 import com.projeto_final.PrevisaoDoTempo.core.dto.CidadeRequestDdo;
 import com.projeto_final.PrevisaoDoTempo.core.dto.CidadeResponseDto;
-import com.projeto_final.PrevisaoDoTempo.core.dto.DadoMeteorologicoRequestDto;
-import com.projeto_final.PrevisaoDoTempo.core.dto.DadoMeteorologicoResponseDto;
 import com.projeto_final.PrevisaoDoTempo.core.entities.Cidade;
-import com.projeto_final.PrevisaoDoTempo.core.entities.DadoMeteorologico;
 import com.projeto_final.PrevisaoDoTempo.service.CidadeService;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 @AllArgsConstructor
 @RestController
-@RequestMapping(value = "/previsao/clima/cidade")
+@RequestMapping(value = "/cidade")
 public class CidadeController {
 
     private final CidadeService cidadeService;
