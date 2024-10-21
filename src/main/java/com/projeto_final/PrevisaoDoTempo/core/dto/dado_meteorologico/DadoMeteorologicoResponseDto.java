@@ -1,4 +1,4 @@
-package com.projeto_final.PrevisaoDoTempo.core.dto;
+package com.projeto_final.PrevisaoDoTempo.core.dto.dado_meteorologico;
 
 import lombok.Getter;
 import lombok.Setter;

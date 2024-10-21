@@ -1,6 +1,5 @@
 package com.projeto_final.PrevisaoDoTempo.core.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -10,31 +9,26 @@ import lombok.Setter;
 import java.util.ArrayList;
 import java.util.List;
 
+@Getter
+@Setter
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "cidades")
-public class Cidade {
+@Table(name = "estados")
+public class Estado  {
 
-    @Getter
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(unique = true)
     @Getter
     @Setter
+    @Column(nullable = false, unique = true)
     private String nome;
 
-    @JsonIgnore
-    @Getter @Setter
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "estado_id")
-    private Estado estado;
-
     @Getter
     @Setter
-    @OneToMany(mappedBy = "cidade", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<DadoMeteorologico> dadosMeteorologicos = new ArrayList<>();
+    @OneToMany(mappedBy = "estado", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Cidade> cidades = new ArrayList<>();
 
 }

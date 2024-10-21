@@ -1,5 +1,6 @@
-package com.projeto_final.PrevisaoDoTempo.core.dto;
+package com.projeto_final.PrevisaoDoTempo.core.dto.cidade;
 
+import com.projeto_final.PrevisaoDoTempo.core.dto.dado_meteorologico.DadoMeteorologicoRequestDto;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

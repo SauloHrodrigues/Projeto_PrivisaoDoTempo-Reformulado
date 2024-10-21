@@ -1,18 +1,11 @@
 package com.projeto_final.PrevisaoDoTempo.fixture;
 
-import com.projeto_final.PrevisaoDoTempo.core.dto.CidadeRequestDdo;
-import com.projeto_final.PrevisaoDoTempo.core.dto.CidadeResponseDto;
-import com.projeto_final.PrevisaoDoTempo.core.dto.DadoMeteorologicoRequestDto;
-import com.projeto_final.PrevisaoDoTempo.core.dto.DadoMeteorologicoResponseDto;
+import com.projeto_final.PrevisaoDoTempo.core.dto.cidade.CidadeRequestDdo;
+import com.projeto_final.PrevisaoDoTempo.core.dto.cidade.CidadeResponseDto;
+import com.projeto_final.PrevisaoDoTempo.core.dto.dado_meteorologico.DadoMeteorologicoRequestDto;
 import com.projeto_final.PrevisaoDoTempo.core.entities.Cidade;
 import com.projeto_final.PrevisaoDoTempo.core.entities.DadoMeteorologico;
-import com.projeto_final.PrevisaoDoTempo.core.enuns.Clima;
-import com.projeto_final.PrevisaoDoTempo.core.enuns.Turno;
-import com.projeto_final.PrevisaoDoTempo.mapper.MapperCidade;
-import com.projeto_final.PrevisaoDoTempo.mapper.MapperDadosMetearologicos;
 
-import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
 public class CidadeFixture {

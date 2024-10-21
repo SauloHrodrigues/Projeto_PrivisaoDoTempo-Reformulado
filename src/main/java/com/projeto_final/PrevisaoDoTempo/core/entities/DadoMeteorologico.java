@@ -34,6 +34,7 @@ public class DadoMeteorologico {
     private Clima clima;
     @Getter @Setter
     private Integer precipitacao;
+
     @JsonIgnore
     @Getter @Setter
     @ManyToOne(fetch = FetchType.LAZY)
