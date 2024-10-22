@@ -30,7 +30,7 @@ public class CidadeService implements com.projeto_final.PrevisaoDoTempo.service.
 
     @Override
     public CidadeResponseDto registrar(CidadeNovaDto requestDdo) {
-        Cidade cidade = buscarCidade(requestDdo.nome());
+        Cidade cidade = buscarCidadePorNome(requestDdo.nome());
         Estado estado = estadoService.estadoExiste(requestDdo.estado());
 
         if (cidade != null) {
@@ -55,26 +55,19 @@ public class CidadeService implements com.projeto_final.PrevisaoDoTempo.service.
 
     @Override
     public CidadeResponseDto buscar(Long id) {
-        return mapper.cidadeToResponseDto(buscarCidade(id));
+        return mapper.cidadeToResponseDto(buscarCidadePorId(id));
     }
 
     @Override
-    public CidadeResponseDto buscarNome(String nome) {
-
-        Cidade cidade = buscarCidade(nome);
-
-        if (cidade == null){
-            throw new ObjetoNaoEncontradoExcepition("A cidade " + nome + " não esta cadastrada " +
-                    "em nosso sistema.");
-        }
-
-        return mapper.cidadeToResponseDto(buscarCidade(nome));
+    public CidadeResponseDto buscar(String nome) {
+        System.out.println("entrou no busca por nome");
+        return mapper.cidadeToResponseDto(buscarCidadePorNome(nome));
     }
 
     @Override
     public CidadeResponseDto alterar(Long id, CidadeAtualizadaDto cidadeAtualizadaDto) {
 
-        Cidade cidade = buscarCidade(id);
+        Cidade cidade = buscarCidadePorId(id);
         mapper.updateCidadeFromCidadeResponseDto(cidade, cidadeAtualizadaDto);
         repository.save(cidade);
 
@@ -84,7 +77,7 @@ public class CidadeService implements com.projeto_final.PrevisaoDoTempo.service.
     @Override
     public CidadeResponseDto alterar(String nome, CidadeAtualizadaDto cidadeAtualizadaDto) {
 
-        Cidade cidade = buscarCidade(nome);
+        Cidade cidade = buscarCidadePorNome(nome);
         mapper.updateCidadeFromCidadeResponseDto(cidade, cidadeAtualizadaDto);
         repository.save(cidade);
 
@@ -94,19 +87,19 @@ public class CidadeService implements com.projeto_final.PrevisaoDoTempo.service.
     @Override
     public boolean excluir(Long id) {
 
-        Cidade cidade = buscarCidade(id);
+        Cidade cidade = buscarCidadePorId(id);
         repository.delete(cidade);
         return true;
     }
 
     @Override
     public boolean excluir(String nome) {
-        Cidade cidade = buscarCidade(nome);
+        Cidade cidade = buscarCidadePorNome(nome);
         repository.delete(cidade);
         return true;
     }
 
-    private Cidade buscarCidade(Long id){
+    public Cidade buscarCidadePorId(Long id){
 
         Optional<Cidade> cidade = repository.findById(id);
 
@@ -118,14 +111,14 @@ public class CidadeService implements com.projeto_final.PrevisaoDoTempo.service.
         }
     }
 
-    private Cidade buscarCidade(String nome){
-
+    public Cidade buscarCidadePorNome(String nome){
+        System.out.println("Entrou no buscar Cidade com: " + nome);
         Optional<Cidade> cidade = repository.findByNome(nome);
 
         if(cidade.isPresent()){
             return cidade.get();
         }else {
-            throw new ObjetoNaoEncontradoExcepition("A cidade de id: " + nome +
+            throw new ObjetoNaoEncontradoExcepition("A cidade de nome: " + nome +
                     " não consta cadastrada no sistema.");
         }
     }

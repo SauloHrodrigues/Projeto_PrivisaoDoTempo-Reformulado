@@ -27,10 +27,10 @@ public class CidadeController {
         return ResponseEntity.status(HttpStatus.OK).body(cidadeService.buscar());
     }
 
-    @GetMapping("/")
+    @GetMapping("/nome")
     @ResponseBody
     public ResponseEntity<CidadeResponseDto> buscar(@RequestParam(required = false) String nome) {
-        return ResponseEntity.status(HttpStatus.OK).body(cidadeService.buscarNome(nome));
+        return ResponseEntity.status(HttpStatus.OK).body(cidadeService.buscar(nome));
     }
 
     @GetMapping("/{id}")

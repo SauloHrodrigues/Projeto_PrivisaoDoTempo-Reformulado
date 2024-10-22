@@ -16,22 +16,29 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @Table(name = "dados_meteorologico")
 public class DadoMeteorologico {
+
     @Getter
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @Getter @Setter
     private LocalDate data;
+
     @Getter @Setter
     private Integer temperaturaMinima;
+
     @Getter @Setter
     private Integer temperaturaMaxima;
+
     @Getter @Setter
     @Enumerated(EnumType.STRING)
     private Turno turno;
+
     @Getter @Setter
     @Enumerated(EnumType.STRING)
     private Clima clima;
+
     @Getter @Setter
     private Integer precipitacao;
 

@@ -14,7 +14,7 @@ public interface CidadeService {
 
     CidadeResponseDto buscar(Long id);
 
-    CidadeResponseDto buscarNome(String nome);
+    CidadeResponseDto buscar(String nome);
 
     CidadeResponseDto alterar(Long id, CidadeAtualizadaDto cidadeAtualizadaDto);
 
