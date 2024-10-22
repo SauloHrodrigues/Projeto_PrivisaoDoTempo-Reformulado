@@ -1,20 +1,13 @@
 package com.projeto_final.PrevisaoDoTempo.core.dto.cidade;
 
-import com.projeto_final.PrevisaoDoTempo.core.dto.dado_meteorologico.DadoMeteorologicoRequestDto;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.projeto_final.PrevisaoDoTempo.core.entities.DadoMeteorologico;
+import com.projeto_final.PrevisaoDoTempo.core.entities.Estado;
 
-@AllArgsConstructor
-@NoArgsConstructor
-public class CidadeRequestDdo {
+public record CidadeRequestDdo(
+        String nome,
 
-    @Getter
-    @Setter
-    private String nome;
+        Estado estado,
 
-    @Getter
-    @Setter
-    private DadoMeteorologicoRequestDto dadosMeteorologicos;
+        DadoMeteorologico dadoMeteorologico
+) {
 }

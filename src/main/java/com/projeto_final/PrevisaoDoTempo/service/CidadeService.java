@@ -1,13 +1,14 @@
 package com.projeto_final.PrevisaoDoTempo.service;
 
-import com.projeto_final.PrevisaoDoTempo.core.dto.cidade.CidadeRequestDdo;
+import com.projeto_final.PrevisaoDoTempo.core.dto.cidade.CidadeAtualizadaDto;
+import com.projeto_final.PrevisaoDoTempo.core.dto.cidade.CidadeNovaDto;
 import com.projeto_final.PrevisaoDoTempo.core.dto.cidade.CidadeResponseDto;
 
 import java.util.List;
 
 public interface CidadeService {
 
-    CidadeResponseDto registrar(CidadeRequestDdo requestDdo);
+    CidadeResponseDto registrar(CidadeNovaDto cidadeNovaDto);
 
     List<CidadeResponseDto> buscar();
 
@@ -15,9 +16,9 @@ public interface CidadeService {
 
     CidadeResponseDto buscarNome(String nome);
 
-    CidadeResponseDto alterar(Long id);
+    CidadeResponseDto alterar(Long id, CidadeAtualizadaDto cidadeAtualizadaDto);
 
-    CidadeResponseDto alterar(String nome);
+    CidadeResponseDto alterar(String nome, CidadeAtualizadaDto cidadeAtualizadaDto);
 
     boolean excluir(Long id);
 

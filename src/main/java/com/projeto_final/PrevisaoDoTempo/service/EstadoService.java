@@ -1,6 +1,5 @@
 package com.projeto_final.PrevisaoDoTempo.service;
 
-import com.projeto_final.PrevisaoDoTempo.core.dto.cidade.CidadeResponseDto;
 import com.projeto_final.PrevisaoDoTempo.core.dto.estado.EstadoAtualizarDto;
 import com.projeto_final.PrevisaoDoTempo.core.dto.estado.EstadoRequestDto;
 import com.projeto_final.PrevisaoDoTempo.core.dto.estado.EstadoResponseDto;

@@ -1,6 +1,5 @@
 package com.projeto_final.PrevisaoDoTempo.service.implementacoes;
 
-import com.projeto_final.PrevisaoDoTempo.core.dto.cidade.CidadeResponseDto;
 import com.projeto_final.PrevisaoDoTempo.core.dto.estado.EstadoAtualizarDto;
 import com.projeto_final.PrevisaoDoTempo.core.dto.estado.EstadoRequestDto;
 import com.projeto_final.PrevisaoDoTempo.core.dto.estado.EstadoResponseDto;
@@ -20,7 +19,7 @@ import java.util.Optional;
 public class EstadoService implements com.projeto_final.PrevisaoDoTempo.service.EstadoService {
 
     @Autowired
-    EstadoRepository repository;
+    private EstadoRepository repository;
 
     private final EstadoMapper mapper = EstadoMapper.INSTANCE;
 
@@ -118,7 +117,7 @@ public class EstadoService implements com.projeto_final.PrevisaoDoTempo.service.
         return false;
     }
 
-    private Estado estadoExiste(String nome) {
+    public Estado estadoExiste(String nome) {
         Optional<Estado> estado = repository.findByNome(nome);
         if (estado.isPresent()) {
             return estado.get();
@@ -127,7 +126,7 @@ public class EstadoService implements com.projeto_final.PrevisaoDoTempo.service.
         }
     }
 
-    private Estado estadoExiste(Long id) {
+    public Estado estadoExiste(Long id) {
 
         Optional<Estado> estado = repository.findById(id);
         if (estado.isPresent()) {

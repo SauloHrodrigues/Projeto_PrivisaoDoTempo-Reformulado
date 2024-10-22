@@ -1,7 +1,5 @@
 package com.projeto_final.PrevisaoDoTempo.fixture;
 
-import com.projeto_final.PrevisaoDoTempo.core.dto.cidade.CidadeRequestDdo;
-import com.projeto_final.PrevisaoDoTempo.core.dto.cidade.CidadeResponseDto;
 import com.projeto_final.PrevisaoDoTempo.core.dto.dado_meteorologico.DadoMeteorologicoRequestDto;
 import com.projeto_final.PrevisaoDoTempo.core.entities.Cidade;
 import com.projeto_final.PrevisaoDoTempo.core.entities.DadoMeteorologico;

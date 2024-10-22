@@ -1,23 +1,20 @@
 package com.projeto_final.PrevisaoDoTempo.core.dto.cidade;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.projeto_final.PrevisaoDoTempo.core.entities.DadoMeteorologico;
-import lombok.Getter;
-import lombok.Setter;
-import java.util.ArrayList;
+import com.projeto_final.PrevisaoDoTempo.core.entities.Estado;
+
 import java.util.List;
 
-public class CidadeResponseDto {
+public record CidadeResponseDto(
+        Long id,
 
-    @Getter
-    @Setter
-    private Long id;
+        String nome,
 
-    @Getter
-    @Setter
-    private String nome;
+        @JsonIgnore
+        Estado estado,
 
-    @Getter
-    @Setter
-    private List<DadoMeteorologico> dadosMeteorologicos = new ArrayList<>();
-
+        @JsonIgnore
+        List<DadoMeteorologico> dadoMeteorologicos
+) {
 }
