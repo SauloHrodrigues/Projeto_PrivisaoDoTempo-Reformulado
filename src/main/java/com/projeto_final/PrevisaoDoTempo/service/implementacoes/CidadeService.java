@@ -127,12 +127,5 @@ public class CidadeService implements com.projeto_final.PrevisaoDoTempo.service.
     public void adicionarDadoNaCidade(Cidade cidade, DadoMeteorologico dado){
         cidade.getDadosMeteorologicos().add(dado);
         repository.save(cidade);
-        System.out.println("dado adicionado com sucess");
-        System.out.println("-------------------------------------");
-        System.out.println(cidade.getDadosMeteorologicos().get(0).getId());
-        System.out.println(cidade.getDadosMeteorologicos().get(0).getData());
-        System.out.println(cidade.getDadosMeteorologicos().get(0).getClima());
-        System.out.println(cidade.getDadosMeteorologicos().get(0).getPrecipitacao());
-        System.out.println(cidade.getDadosMeteorologicos().get(0).getTemperaturaMinima());
     }
 }

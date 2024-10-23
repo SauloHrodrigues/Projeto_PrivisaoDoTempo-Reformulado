@@ -22,6 +22,7 @@ public class CidadeController {
     public ResponseEntity<CidadeResponseDto> cadastra(@RequestBody CidadeNovaDto cidadeRequestDdo){
         return ResponseEntity.status(HttpStatus.CREATED).body(cidadeService.registrar(cidadeRequestDdo));
     }
+
     @GetMapping()
     public ResponseEntity<List<CidadeResponseDto>> buscar() {
         return ResponseEntity.status(HttpStatus.OK).body(cidadeService.buscar());

@@ -23,7 +23,6 @@ public class EstadoService implements com.projeto_final.PrevisaoDoTempo.service.
 
     private final EstadoMapper mapper = EstadoMapper.INSTANCE;
 
-
     @Override
     public EstadoResponseDto registrar(EstadoRequestDto requestDdo) {
 
