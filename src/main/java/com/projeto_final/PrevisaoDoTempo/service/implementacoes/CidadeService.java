@@ -5,6 +5,7 @@ import com.projeto_final.PrevisaoDoTempo.core.dto.cidade.CidadeNovaDto;
 import com.projeto_final.PrevisaoDoTempo.core.dto.cidade.CidadeRequestDdo;
 import com.projeto_final.PrevisaoDoTempo.core.dto.cidade.CidadeResponseDto;
 import com.projeto_final.PrevisaoDoTempo.core.entities.Cidade;
+import com.projeto_final.PrevisaoDoTempo.core.entities.DadoMeteorologico;
 import com.projeto_final.PrevisaoDoTempo.core.entities.Estado;
 import com.projeto_final.PrevisaoDoTempo.exception.ObjetoJaCadastradoExcepition;
 import com.projeto_final.PrevisaoDoTempo.exception.ObjetoNaoEncontradoExcepition;
@@ -112,7 +113,7 @@ public class CidadeService implements com.projeto_final.PrevisaoDoTempo.service.
     }
 
     public Cidade buscarCidadePorNome(String nome){
-        System.out.println("Entrou no buscar Cidade com: " + nome);
+
         Optional<Cidade> cidade = repository.findByNome(nome);
 
         if(cidade.isPresent()){
@@ -121,5 +122,17 @@ public class CidadeService implements com.projeto_final.PrevisaoDoTempo.service.
             throw new ObjetoNaoEncontradoExcepition("A cidade de nome: " + nome +
                     " não consta cadastrada no sistema.");
         }
+    }
+
+    public void adicionarDadoNaCidade(Cidade cidade, DadoMeteorologico dado){
+        cidade.getDadosMeteorologicos().add(dado);
+        repository.save(cidade);
+        System.out.println("dado adicionado com sucess");
+        System.out.println("-------------------------------------");
+        System.out.println(cidade.getDadosMeteorologicos().get(0).getId());
+        System.out.println(cidade.getDadosMeteorologicos().get(0).getData());
+        System.out.println(cidade.getDadosMeteorologicos().get(0).getClima());
+        System.out.println(cidade.getDadosMeteorologicos().get(0).getPrecipitacao());
+        System.out.println(cidade.getDadosMeteorologicos().get(0).getTemperaturaMinima());
     }
 }

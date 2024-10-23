@@ -44,7 +44,7 @@ public class DadoMeteorologico {
 
     @JsonIgnore
     @Getter @Setter
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "cidade_id")
     private Cidade cidade;
 }

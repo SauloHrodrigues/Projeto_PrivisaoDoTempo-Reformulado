@@ -14,7 +14,7 @@ public record CidadeResponseDto(
         @JsonIgnore
         Estado estado,
 
-        @JsonIgnore
+//        @JsonIgnore
         List<DadoMeteorologico> dadoMeteorologicos
 ) {
 }

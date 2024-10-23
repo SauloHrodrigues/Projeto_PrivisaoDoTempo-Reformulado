@@ -1,16 +1,9 @@
 package com.projeto_final.PrevisaoDoTempo.core.dto.dado_meteorologico;
 
-import com.projeto_final.PrevisaoDoTempo.core.dto.cidade.CidadeResponseDto;
 import com.projeto_final.PrevisaoDoTempo.core.enuns.Clima;
 import com.projeto_final.PrevisaoDoTempo.core.enuns.Turno;
 
-import java.time.LocalDate;
-
-public record DadoResponseDto(
-
-        Long id,
-
-        LocalDate data,
+public record DadoAtualizarDto(
 
         Integer temperaturaMinima,
 
@@ -20,8 +13,6 @@ public record DadoResponseDto(
 
         Clima clima,
 
-        Integer precipitacao,
-
-        CidadeResponseDto cidade
+        Integer precipitacao
 ) {
 }
